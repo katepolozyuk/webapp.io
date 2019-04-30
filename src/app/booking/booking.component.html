@@ -1,0 +1,25 @@
+<div class = "calendar">
+  <div class = "calendar-header">
+    <div class = "previous-month">
+      Февраль
+    </div>
+    <div class = "current-month">
+      Март
+    </div>
+    <div class = "next-month">
+      Апрель
+    </div>
+  </div>
+  <div class = "day" *ngFor = "let d of weekdays">
+      {{d}}
+    </div>
+    
+    <div [className]="days.id > today ? 'day-future' : 'day-past'" *ngFor = "let days of days">
+      <div>{{days.id}}</div>
+      <div *ngIf = "days.id > today; else notShow">{{days.sits}} мест</div>
+      <ng-template #notShow>
+        <div></div>
+      </ng-template>
+    </div>
+    
+</div>
