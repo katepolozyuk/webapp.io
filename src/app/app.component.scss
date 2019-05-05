@@ -1,0 +1,29 @@
+@import "var";
+@import "mixin";
+
+app-header{
+    height: 80px;
+    @include grid(100px 700px, space-around, center, 0px);
+    background: rgba(0.0,0.0,0.0,0.4);
+    padding: 10px;
+}
+
+app-games{
+    @include grid(300px 300px 300px 300px, center, none, 50px);
+}
+
+app-price{
+    @include grid(400px 400px 400px, center, center, 50px);
+}
+
+app-contact{
+    @include grid(700px 300px, space-around, center, 20px);
+}
+
+app-footer{
+    @include grid(200px 300px 200px, space-around, center, 0px);
+    height: 50px;
+    padding: 10px 0px 10px 0px;
+    margin-top: 130px;
+    background: rgba(0.0,0.0,0.0,0.6);
+}

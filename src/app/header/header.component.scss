@@ -1,0 +1,14 @@
+@import "var";
+@import "mixin";
+
+.navigation{
+    @include list();
+    a{
+        text-decoration: none;
+        @include font (20px, $day-color);
+        margin-left:30px;
+        &:hover{
+            color: $day-color-sits;
+        }
+    }   
+}

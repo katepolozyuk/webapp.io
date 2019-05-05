@@ -1,0 +1,9 @@
+<h1>Мы предоставляем большой ассортимент игр!</h1>
+
+<div class = "image-game" *ngFor = "let g of games">
+  <img src = {{g.img}}/>
+  <div class = "text-game">
+    <p class = "name">{{g.name}}</p>
+    <p class = "about">{{g.about}}</p>
+  </div>
+</div>

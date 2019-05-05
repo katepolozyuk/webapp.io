@@ -1,0 +1,13 @@
+@import "var";
+@import "mixin";
+
+h1{
+    grid-column: 1 / span 2;
+    @include font(30px, $day-color);
+    text-align:center;
+    margin-top:30px;
+}
+
+.contact p{
+    @include font(26px, white);
+}

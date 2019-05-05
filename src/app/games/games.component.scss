@@ -1,0 +1,37 @@
+@import "var";
+@import "mixin";
+
+h1{
+    grid-column: 1 / span 4;
+    @include font(30px, $day-color);
+    text-align:center;
+    margin-top:30px;
+}
+
+
+.image-game{
+    position: relative;
+    .text-game {
+
+        align-content: flex-end;
+        height: 100%;
+        display: none;
+        position: absolute;
+        left:0;
+        bottom:0;
+        right:0;
+        background: rgba(0, 0, 0, 0.5);
+        .name{
+            @include font(22px, white);
+            text-align: center;
+        }
+        .about{
+            @include font(16px, white);
+            text-align: center;
+        }
+    }
+}
+
+.image-game:hover .text-game{
+    display: block;
+}

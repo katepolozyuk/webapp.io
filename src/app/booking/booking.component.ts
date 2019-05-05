@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Day } from '../days';
-import { DAYS } from '../mock-days';
-import { toDate } from '@angular/common/src/i18n/format_date';
+import { DAYS } from '../march-days';
 
 @Component({
   selector: 'app-booking',

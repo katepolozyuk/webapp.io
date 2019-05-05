@@ -7,13 +7,19 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BookingComponent } from './booking/booking.component';
+import { GamesComponent } from './games/games.component';
+import { PriceComponent } from './price/price.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    BookingComponent
+    BookingComponent,
+    GamesComponent,
+    PriceComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,23 @@
+@import "var";
+@import "mixin";
+
+
+h1{
+    grid-column: 1 / span 3;
+    @include font(30px, $day-color);
+    text-align:center;
+    margin-top:30px;
+}
+
+.price-block{
+    background-color: rgba($color: black, $alpha: 0.6);
+    border-radius: 40px;
+    .title{
+        @include font(24px, white);
+        text-align: center;
+    }
+    .time,.price{
+        @include font(20px, white);
+        text-align: center;
+    }
+}
