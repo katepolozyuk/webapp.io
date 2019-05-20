@@ -1,6 +1,6 @@
 import { Day } from './days';
 
-export const MARCHDAYS: Day[] = [
+export const FEBDAYS: Day[] = [
     { id: 1, sits: 10},
     { id: 2, sits: 15},
     { id: 3, sits: 20},
@@ -29,7 +29,4 @@ export const MARCHDAYS: Day[] = [
     { id: 26, sits: 16},
     { id: 27, sits: 18},
     { id: 28, sits: 21},
-    { id: 29, sits: 20},
-    { id: 30, sits: 10},
-    { id: 31, sits: 12},
 ];

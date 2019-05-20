@@ -1,0 +1,15 @@
+@import "var";
+@import "mixin";
+
+.calendar-header{
+    padding: 0;
+    li{
+        @include list();
+        @include font(21px, white);
+        text-align: center;
+    }
+    .active{
+        color: $day-color-sits;
+    }
+    @include grid(200px 160px 200px, none, none, 0px);
+}

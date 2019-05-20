@@ -1,0 +1,7 @@
+<ul class = "calendar-header">
+  <li *ngFor="let tab of tabs" (click)="selectTab(tab)" [className] = "tab.selected ? 'active' : 'ianactive'">
+    {{tab.tabTitle}}
+  </li>
+</ul>
+<ng-content></ng-content>
+

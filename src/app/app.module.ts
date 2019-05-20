@@ -10,6 +10,9 @@ import { BookingComponent } from './booking/booking.component';
 import { GamesComponent } from './games/games.component';
 import { PriceComponent } from './price/price.component';
 import { ContactComponent } from './contact/contact.component';
+import { TabsComponent } from './tabs/tabs.component';
+import { TabComponent } from './tab/tab.component';
+
 
 @NgModule({
   declarations: [
@@ -19,14 +22,17 @@ import { ContactComponent } from './contact/contact.component';
     BookingComponent,
     GamesComponent,
     PriceComponent,
-    ContactComponent
+    ContactComponent,
+    TabsComponent,
+    TabComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [TabsComponent,
+    TabComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

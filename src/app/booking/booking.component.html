@@ -1,26 +1,79 @@
 <h1>Збронируйте время прямо сейчас!</h1>
-<div class = "calendar">
-  <div class = "calendar-header">
-    <div class = "previous-month">
-      Февраль
+
+<form class = "booking-form" #myForm="ngForm" novalidate>
+
+    <app-tabs>
+      <app-tab tabTitle = "Февраль">
+          <div class = "calendar-feb">
+              <div class = "day" *ngFor = "let d of weekdays">
+                  {{d}}
+                </div>
+                <div class = "day-off"></div>
+                <div class = "day-past" *ngFor = "let days of fdays">
+                  <div>{{days.id}}</div>
+                  <div class = "sits"></div>
+                </div>
+          </div>
+      </app-tab>
+      <app-tab tabTitle = "Март">
+        <div class = "calendar-march">
+            <div class = "day" *ngFor = "let d of weekdays">
+                {{d}}
+              </div>
+              <div class = "day-off"></div>
+              <div [className]="days.id > today ? 'day-future' : 'day-past'" *ngFor = "let days of mdays">
+                <div>{{days.id}}</div>
+                <div class = "sits" *ngIf = "days.id > today; else notShow">{{days.sits}} мест</div>
+                <ng-template #notShow>
+                  <div></div>
+                </ng-template>
+              </div>
+        </div>
+      </app-tab>
+      <app-tab tabTitle = "Апрель">
+          <div class = "calendar-apr">
+              <div class = "day" *ngFor = "let d of weekdays">
+                  {{d}}
+                </div>
+                <div class = "day-off"></div>
+                <div class = "day-future" *ngFor = "let days of adays">
+                  <div>{{days.id}}</div>
+                  <div class = "sits" >{{days.sits}} мест</div>
+                </div>
+          </div>
+      </app-tab>
+    </app-tabs>
+  
+
+    <div class = booking-parametrs>
+        <div class="form-group">
+            <p>Выберите время:</p>
+            <select name="time" [(ngModel)]="time" required>
+              <option *ngFor = "let t of time" [ngValue] = "time">
+                {{t}}
+              </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <p>Ваше имя:</p>
+            <input name="name" [(ngModel)]="name" required />
+        </div>
+        <div class="form-group">
+            <p>Количество мест:</p>
+            <select name="sits" [(ngModel)]="sits" required>
+              <option *ngFor = "let s of sits" [(ngValue)] = "sits">{{s}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <p>Введите телефон:</p>
+            <input name="phone" [(ngModel)] = "phone" required pattern="[0-9]{10}" />
+        </div>
+        <div class="form-group">
+            <p>Комментарий:</p>
+            <textarea name = "comment" [(ngModel)] = "comment" required></textarea>
+        </div>
     </div>
-    <div class = "current-month">
-      Март
-    </div>
-    <div class = "next-month">
-      Апрель
-    </div>
-  </div>
-  <div class = "day" *ngFor = "let d of weekdays">
-      {{d}}
-    </div>
-    <div class = "day-off"></div>
-    <div [className]="days.id > today ? 'day-future' : 'day-past'" *ngFor = "let days of days">
-      <div>{{days.id}}</div>
-      <div class = "sits" *ngIf = "days.id > today; else notShow">{{days.sits}} мест</div>
-      <ng-template #notShow>
-        <div></div>
-      </ng-template>
-    </div>
-    
-</div>
+
+    <button [disabled] = "myForm.invalid" class = "button" (click) = "submit(myForm)">Забронировать</button>
+</form>
+
